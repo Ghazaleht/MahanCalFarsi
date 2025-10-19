@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ماشین‌حساب گویا ماهان</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="brand">
+      <div>
+        <h1>ماشین‌حساب <span>Mahan</span></h1>
+        <p class="subtitle">زیبا — حرفه‌ای — سخن‌گو (فارسی)</p>
+      </div>
+      <div class="controls">
+        <button id="enableVoice" class="btn activate">🎤 فعال‌سازی صدا</button>
+      </div>
+    </header>
+
+    <section class="calculator">
+      <div class="display">
+        <div id="expression" class="expression">0</div>
+        <div id="result" class="result">0</div>
+      </div>
+
+      <div class="keys">
+        <!-- Row 1 -->
+        <button class="btn soft" data-action="clear">C</button>
+        <button class="btn soft" data-action="back">⌫</button>
+        <button class="btn soft" data-value="%">٪</button>
+        <button class="btn op" data-value="/">÷</button>
+
+        <!-- Row 2 -->
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn op" data-value="*">×</button>
+
+        <!-- Row 3 -->
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn op" data-value="-">−</button>
+
+        <!-- Row 4 -->
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn op" data-value="+">+</button>
+
+        <!-- Row 5 -->
+        <button class="btn" data-value="(">(</button>
+        <button class="btn" data-value="0">0</button>
+        <button class="btn" data-value=")">)</button>
+        <button class="btn equals" data-action="equals">=</button>
+      </div>
+
+      <footer class="credits">© <strong>Mahan Calculator</strong> — نسخه گویا برای موبایل</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
