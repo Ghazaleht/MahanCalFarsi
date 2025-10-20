@@ -6,32 +6,29 @@
 
   let expression = '';
 
-  const faWords = {
-    "0":"صفر","1":"یک","2":"دو","3":"سه","4":"چهار","5":"پنج",
-    "6":"شش","7":"هفت","8":"هشت","9":"نه",
-    "+":"جمع","-":"منها","*":"ضرب","/":"تقسیم","=":"مساوی","%":"درصد",".":"ممیز"
+  const engWords = {
+    "0":"zero","1":"one","2":"two","3":"three","4":"four","5":"five",
+    "6":"six","7":"seven","8":"eight","9":"nine",
+    "+":"plus","-":"minus","*":"times","/":"divided by","=":"equals","%":"percent",".":"dot"
   };
 
   function speak(text){
     if(!voiceToggle.checked || !window.speechSynthesis) return;
     const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = "fa-IR";
-    let voice = speechSynthesis.getVoices().find(v=>v.lang.startsWith("fa"));
-    if(!voice) voice = speechSynthesis.getVoices().find(v=>v.lang.startsWith("en"));
-    if(voice) utter.voice = voice;
+    utter.lang = "en-US";
     utter.rate = 1;
     speechSynthesis.speak(utter);
   }
 
   function speakButton(val){
-    if(faWords[val]) speak(faWords[val]);
+    if(engWords[val]) speak(engWords[val]);
     else if(!isNaN(val)) speak(val);
   }
 
   function setExpression(v){ expression = v; expEl.textContent = expression || '0'; }
   function setResult(v){ resEl.textContent = v; }
 
-  function clearAll(){ setExpression(''); setResult('0'); speak('پاک شد'); }
+  function clearAll(){ setExpression(''); setResult('0'); speak('cleared'); }
   function backspace(){ expression = expression.slice(0,-1); setExpression(expression); }
 
   function appendValue(val){
@@ -45,17 +42,13 @@
       const val = Function(`"use strict"; return (${expression.replace(/÷/g,"/").replace(/×/g,"*")})`)();
       const res = Math.round((val + Number.EPSILON)*1e12)/1e12;
       setResult(res);
-      speak('برابر است با ' + res);
+      speak('equals ' + res);
       expression = String(res);
     } catch {
-      setResult('خطا');
-      speak('خطا در محاسبه');
+      setResult('Error');
+      speak('Error');
     }
   }
-
-  // اضافه کردن MutationObserver برای فعال‌سازی صدا روی موبایل
-  const observer = new MutationObserver(() => speechSynthesis.getVoices());
-  observer.observe(document.body, { childList: true, subtree: true });
 
   keys.forEach(k => k.addEventListener('click', () => {
     const val = k.dataset.value;
