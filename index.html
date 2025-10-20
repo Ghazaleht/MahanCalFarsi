@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ماشین‌حساب گویا ماهان</title>
+  <title>Mahan Calculator — ماشین‌حساب ماهان</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,10 +11,17 @@
     <header class="brand">
       <div>
         <h1>ماشین‌حساب <span>Mahan</span></h1>
-        <p class="subtitle">زیبا — حرفه‌ای — سخن‌گو (فارسی)</p>
+        <p class="subtitle">زیبا — حرفه‌ای — سخن‌گو</p>
       </div>
       <div class="controls">
-        <button id="enableVoice" class="btn activate">🎤 فعال‌سازی صدا</button>
+        <label class="toggle">
+          <input id="voiceToggle" type="checkbox" checked>
+          <span>سخن‌گو</span>
+        </label>
+        <label class="toggle small">
+          <input id="degToggle" type="checkbox">
+          <span>درجه</span>
+        </label>
       </div>
     </header>
 
@@ -28,7 +35,7 @@
         <!-- Row 1 -->
         <button class="btn soft" data-action="clear">C</button>
         <button class="btn soft" data-action="back">⌫</button>
-        <button class="btn soft" data-value="%">٪</button>
+        <button class="btn soft" data-value="%">%</button>
         <button class="btn op" data-value="/">÷</button>
 
         <!-- Row 2 -->
@@ -50,13 +57,29 @@
         <button class="btn op" data-value="+">+</button>
 
         <!-- Row 5 -->
-        <button class="btn" data-value="(">(</button>
+        <button class="btn fn" data-value="(`)()">( )</button>
         <button class="btn" data-value="0">0</button>
-        <button class="btn" data-value=")">)</button>
+        <button class="btn" data-value=".">.</button>
         <button class="btn equals" data-action="equals">=</button>
+
+        <!-- Scientific / extras -->
+        <button class="btn small" data-value="Math.sqrt(">√</button>
+        <button class="btn small" data-value="Math.pow(">xⁿ</button>
+        <button class="btn small" data-value="Math.PI">π</button>
+        <button class="btn small" data-value="," data-action="comma">,</button>
+
+        <button class="btn tiny" data-action="mc">MC</button>
+        <button class="btn tiny" data-action="mr">MR</button>
+        <button class="btn tiny" data-action="mplus">M+</button>
+        <button class="btn tiny" data-action="mminus">M-</button>
+
+        <button class="btn tiny" data-value="Math.sin(">sin</button>
+        <button class="btn tiny" data-value="Math.cos(">cos</button>
+        <button class="btn tiny" data-value="Math.tan(">tan</button>
+        <button class="btn tiny" data-value="Math.log10(">log</button>
       </div>
 
-      <footer class="credits">© <strong>Mahan Calculator</strong> — نسخه گویا برای موبایل</footer>
+      <footer class="credits">© <strong>Mahan Calculator</strong> — طراحی زیبا و عملکرد دقیق</footer>
     </section>
   </main>
 
