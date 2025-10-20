@@ -23,7 +23,6 @@ body{
 .controls{display:flex;gap:8px;align-items:center}
 .toggle{display:flex;gap:8px;align-items:center;font-size:13px}
 .toggle input{width:18px;height:18px}
-.toggle.small{font-size:12px}
 
 .calculator{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius:18px;padding:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
@@ -35,8 +34,6 @@ body{
 .btn.soft{background:rgba(255,255,255,0.03)}
 .btn.op{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
 .equals{grid-column:4 / 5;background:linear-gradient(90deg,var(--accent),#34d399);color:#042018;font-weight:700}
-.btn.small{padding:10px;font-size:14px}
-.btn.tiny{padding:8px;font-size:13px}
 .credits{margin-top:12px;font-size:12px;color:var(--muted);text-align:center}
 
 @media (max-width:420px){.btn{padding:12px;font-size:15px}.result{font-size:24px}}
